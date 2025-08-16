@@ -17,6 +17,7 @@ with open("pipeline.pkl", "rb") as file:
 
 
 
+
 st.set_page_config(page_title="Viz Demo")
 st.header("Property Price Prediction")
 st.subheader('Enter your inputs')
