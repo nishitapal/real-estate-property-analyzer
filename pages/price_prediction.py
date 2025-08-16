@@ -4,7 +4,7 @@ import pickle
 import gdown
 import pandas as pd
 import numpy as np
-
+import os 
 if not os.path.exists("pipeline.pkl"):
     url = "https://drive.google.com/uc?id=1MLOZfANe6aaunddIprItZMc-pnUcoACw"  
     gdown.download(url, "pipeline.pkl", quiet=False)
