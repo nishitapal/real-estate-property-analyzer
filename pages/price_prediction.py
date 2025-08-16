@@ -5,6 +5,17 @@ import gdown
 import pandas as pd
 import numpy as np
 
+if not os.path.exists("pipeline.pkl"):
+    url = "https://drive.google.com/uc?id=1MLOZfANe6aaunddIprItZMc-pnUcoACw"  
+    gdown.download(url, "pipeline.pkl", quiet=False)
+
+# --- Step 2: pipeline.pkl load karo ---
+with open("pipeline.pkl", "rb") as file:
+    pipeline = pickle.load(file)
+
+
+
+
 
 st.set_page_config(page_title="Viz Demo")
 st.header("Property Price Prediction")
