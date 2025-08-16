@@ -4,15 +4,19 @@ import pickle
 import gdown
 import pandas as pd
 import numpy as np
-import os 
-if not os.path.exists("pipeline.pkl"):
-    url = "https://drive.google.com/uc?id=1MLOZfANe6aaunddIprItZMc-pnUcoACw"  
-    gdown.download(url, "pipeline.pkl", quiet=False)
+import os
 
-# --- Step 2: pipeline.pkl load karo ---
-with open("pipeline.pkl", "rb") as file:
+url = "https://drive.google.com/uc?id=1MLOZfANe6aaunddIprItZMc-pnUcoACw"
+output = "pipeline.pkl"
+
+# Agar file pehle se nahi hai to download karo
+if not os.path.exists(output):
+    st.write("Downloading pipeline.pkl from Google Drive...")
+    gdown.download(url, output, quiet=False)
+
+# Ab pipeline.pkl ko load karo
+with open(output, "rb") as file:
     pipeline = pickle.load(file)
-
 
 
 
